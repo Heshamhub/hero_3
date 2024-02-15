@@ -8,10 +8,6 @@
     list-style: none;
 }
 
-body {
-    position: relative;
-}
-
 p,
 a,
 span,
@@ -43,7 +39,7 @@ header {
 
 nav ul {
     display: flex;
-    column-gap: 72px;
+    gap: 72px;
 }
 
 li a {
@@ -62,12 +58,14 @@ section {
 }
 
 .row-section {
+    position: relative;
     display: flex;
     flex-direction: column;
-    row-gap: 175px;
+    gap: 175px;
 }
 
 /*_______________________________ upper row _______________________  */
+
 .upper {
     display: flex;
     flex-direction: column;
@@ -96,7 +94,7 @@ h1 {
 
 .order-menu {
     display: flex;
-    column-gap: 66px;
+    gap: 66px;
     align-items: center;
 }
 
@@ -111,7 +109,7 @@ h1 {
 
 .menu {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
     align-items: center;
     color: #333;
     font-size: 18px;
@@ -122,7 +120,7 @@ h1 {
 
 .lower {
     display: flex;
-    column-gap: 100px;
+    justify-content: space-evenly;
     padding-bottom: 76px;
     align-items: end;
 }
@@ -130,7 +128,7 @@ h1 {
 .item {
     display: flex;
     flex-direction: column;
-    row-gap: 31px;
+    gap: 31px;
     border-radius: 35px;
     background: #FFF;
     padding: 39px 109px 45px 36px;
@@ -140,7 +138,7 @@ h1 {
 .text {
     display: flex;
     flex-direction: column;
-    row-gap: 7px;
+    gap: 7px;
 }
 
 .item p,
@@ -151,6 +149,7 @@ h1 {
 }
 
 h3 {
+    width: 261px;
     color: #333;
     font-size: 24px;
     line-height: 140%;
@@ -158,6 +157,7 @@ h3 {
 
 .honey {
     font-size: 36px;
+    width: 318px;
 }
 
 .item-honey {
@@ -169,7 +169,7 @@ h3 {
     background: #FFF;
     padding: 42px 60px 50px 58px;
     box-shadow: 0px -5px 40px 0px rgba(109, 141, 173, 0.25);
-    margin-left: 150px;
+
 
 }
 
@@ -182,15 +182,169 @@ h3 {
 
 /* ___________- yellow bg ________ */
 .y-bg {
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    right: 0;
+    display: none;
 }
 
 /* ___________ main photo __________ */
 .photo {
     position: absolute;
-    top: 0;
-    right: 120px;
+    bottom: 93px;
+    right: -228px;
+    z-index: -1;
+}
+
+@media (min-width:1725px) {
+    .heading{
+        text-align: start;
+    }
+    .lower {
+        justify-content: unset;
+        gap: 100px;
+    }
+
+    .item-honey {
+        margin-left: 150px;
+    }
+
+    .y-bg {
+        position: absolute;
+        z-index: -1;
+        bottom: -80px;
+        right: -225px;
+    }
+}
+
+@media (max-width:1665px) {
+    .photo img {
+        width: 900px;
+    }
+
+    .photo {
+        bottom: 100px;
+        right: -100px;
+
+    }
+
+    .y-bg {
+        position: absolute;
+        z-index: -1;
+        bottom: -80px;
+        right: -225px;
+    }
+}
+
+@media (max-width:1550px) {
+    h1 {
+        font-size: 55px;
+    }
+}
+
+@media (max-width:1310px) {
+
+    .lower {
+        flex-direction: column-reverse;
+    }
+
+    .photo img {
+        width: 750px;
+    }
+
+    .item-honey {
+        align-self: end;
+    }
+
+    .photo {
+        bottom: 150px;
+        right: -60px;
+    }
+
+    .align-b {
+        align-self: baseline;
+    }
+
+    .align-e {
+        align-self: end;
+    }
+}
+
+@media (max-width:1175px) {
+    .row-section {
+        gap: 250px;
+    }
+
+    .lower {
+        gap: 50px;
+    }
+
+    .photo {
+        bottom: -50px;
+        right: 275px;
+    }
+
+    .photo img {
+        width: 650px;
+    }
+}
+
+@media (max-width:840px) {
+    .upper{
+        align-items: center;
+        text-align: center;
+    }
+    .row-section {
+        gap: 500px;
+    }
+
+    .lower {
+        gap: 100px;
+    }
+
+    .align-b,
+    .align-e,
+    .item-honey {
+        align-self: center;
+    }
+
+    .photo {
+        right: -90px;
+        bottom: 175px;
+    }
+}
+
+@media (max-width:690px) {
+    nav {
+        display: none;
+    }
+}
+@media (max-width:490px){
+    .honey{
+        width: min-content;
+    }
+    h3{
+        width: min-content;
+    }
+    .photo{
+        right: -118px;
+        bottom: 300px;
+    }
+    .photo img{
+        width: 550px;
+    }
+}
+@media (max-width:410px){
+    .row-section{
+        gap: 350px;
+    }
+
+    .order-menu{
+        flex-direction: column;
+    }
+    .photo img{
+        width: 450px;
+    }
+
+    .photo{
+        right: -72px;
+        bottom: 300px;
+    }
 }
